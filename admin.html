@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mall51- Admin portal</title>
+        <link rel="stylesheet" href="admin-style.css">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
+        <link rel="manifest" href="favicon_package_v0.16/site.webmanifest">
+        <link rel="mask-icon" href="favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+    </head>
+    <body onload="auth()">
+      <!--<header>Admin Portal</header>-->
+      <section id ="Shop">
+          <h2>New Shop</h2>
+          <form id ="forma" name="formy" >
+              <div>
+                  <label for ="fname">Shop Name:</label>
+                  <input type ="text" id="shname" name="shname">
+                </div>
+
+              <div>
+              <label for = "nshop">Shop Id:</label>
+              <input type ="number" id="nshop" name="nshop">
+             </div>
+
+            <div>
+              <label for ="fname">Location:</label>
+              <input type ="text" id="lo" name="lo">
+            </div>
+
+            <div>
+              <label for="Category">Category: </label>
+                  <select name="Category" id="Category">
+                      <option value="-1" selected>Shop Categories</option> <!--i need to colour this grey-->
+                      <option value="Fashion">Fashion</option>
+                      <option value="Food">Food</option>
+                      <option value="Grocery">Grocery</option>
+                  </select>
+          </div>
+          
+            <h2>Owner Details</h2>
+
+              <div>
+                  <label for ="fname">First Name:</label>
+                  <input type="text" id="fname" name="fname" placeholder="Your First Name">
+
+              </div>
+             <div>
+              <label for ="fname">Last Name:</label>
+              <input type="text" id="lname" name="lname" placeholder="Your First Name">
+             </div>
+
+             <div>
+              <label for = "UserName">User Name:</label>
+              <input type ="text" id="UserName" name="UserName">
+             </div>
+
+             <div>
+              <label for = "Passwordd">Password:</label>
+              <input type ="text" id="Password" name="Password">
+             </div>
+             
+            <input id="sub" type="submit" value="Save" name="get">
+          </form>
+      </section>
+    </body>
+    <script>
+      function auth() {
+        const baseURL = 'https://sore-narrow-seashore.glitch.me'
+        let token = localStorage.getItem("Token");
+
+        fetch(baseURL + "/auth/admin", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({token}),
+        })
+        .then((response) => response.json())
+        .then((res)=>{
+          if (res.status === null) {
+            window.location.href = "login.html"
+          }
+        })
+      } 
+    </script>
+    <script src ="admin.js"></script>
+</html>

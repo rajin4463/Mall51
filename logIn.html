@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login form with JavaScript Validation</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
+        <link rel="manifest" href="favicon_package_v0.16/site.webmanifest">
+        <link rel="mask-icon" href="favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="logIn.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="logo text-center">
+  <h1><center>MALL51</center></h1>
+</div>
+<div class="wrapper">
+  <!--SHOP MANAGER LOGIN-->
+  <div class="inner-warpper text-center" id="shopm-login">
+    <h2 class="title">Login to Shop Manager Account</h2>
+    <form action="" id="formvalidate1">
+      <div class="input-group">
+        <label class="palceholder" for="shopm_userName">User Name</label>
+        <input class="form-control" name="shopm_userName" id="shopm_userName" type="text" placeholder="" />
+        <span class="lighting"></span>
+      </div>
+      <div class="input-group">
+        <label class="palceholder" for="shopm_userPassword">Password</label>
+        <input class="form-control" name="shopm_userPassword" id="shopm_userPassword" type="password" placeholder="" />
+        <span class="lighting"></span>
+      </div>
+<!--id="login" => id="shopManLogIn"-->
+      <button type="submit" id="shopManLogIn">Login</button>
+      <div class="clearfix supporter">
+        <a class="forgot pull-right" href="#">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+
+
+   <!--ADMIN LOGIN-->
+   <div class="inner-warpper text-center" id="admin-login">
+    <h2 class="title">Login to Admin Account</h2>
+    <form action="" id="formvalidate2">
+      <div class="input-group">
+        <label class="palceholder" for="admin_userName">User Name</label>
+        <input class="form-control" name="admin_userName" id="admin_userName" type="text" placeholder="" />
+        <span class="lighting"></span>
+      </div>
+      <div class="input-group">
+        <label class="palceholder" for="admin_userPassword">Password</label>
+        <input class="form-control" name="admin_userPassword" id="admin_userPassword" type="password" placeholder="" />
+        <span class="lighting"></span>
+      </div>
+<!--id="login" => id="adminLogIn"-->
+      <button type="submit" id="adminLogIn">Login</button>
+      <div class="clearfix supporter">
+        <a class="forgot pull-right" href="#">Forgot Password?</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- partial -->
+  <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.0/jquery.validate.min.js'></script>
+<!--<script src="https://unpkg.com/axios/dist/axios.min.js"></script>-->
+<script src="./logIn.js"></script>
+
+
+</body>
+</html>
