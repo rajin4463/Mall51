@@ -71,7 +71,6 @@ save.addEventListener('click', async (e)=>{
     .then((json) => {
         if(!json.status == "Success"){
             state = false
-            console.log(state);
         }
     });
 
@@ -83,5 +82,15 @@ save.addEventListener('click', async (e)=>{
         }
     })
     .then((response) => response.json())
-    .then((json) => console.log(json))
+    .then((json) => {
+        if(!json.status == "data saved"){
+            state = false
+        }
+
+        if(state == true){
+            alert("Data saved")
+        }else{
+            alert("Error! Data not saved")
+        }
+    })
 })
