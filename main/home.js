@@ -1,7 +1,6 @@
 BASE_URL = "https://sore-narrow-seashore.glitch.me/";
 let cards = document.querySelector('.cards');
 let searchBar = document.getElementById('search');
-let error = document.querySelector('.error');
 document.getElementById('loading').style.display = 'flex';
 
 
@@ -15,7 +14,7 @@ function closeNav() {
 }
 
 
-// Function to display shop details on the home page
+// Function to display all shop details on the home page
 async function displayShopDetails(url){
     const response = await fetch(url);
     let ShopDetails = await response.json();
@@ -57,6 +56,8 @@ document.getElementById('loading').style.display = 'none';
 }
 displayShopDetails(BASE_URL + "home");
 
+// Eventlistner for the search bar when "Enter" key is hit
+
 searchBar.addEventListener("keyup", function (event) {
     if (event.keyCode === 13){
         let userInput = searchBar.value;
@@ -64,7 +65,7 @@ searchBar.addEventListener("keyup", function (event) {
         
     }
 })
-
+// Function for the search bar to search by shop name or category
 async function searchFunction(urlShop, urlCategory){
     document.getElementById('loading').style.display = 'flex';
     cards.innerHTML = "";
@@ -141,9 +142,6 @@ async function searchFunction(urlShop, urlCategory){
                 }
                 cards.appendChild(fragment);
                 document.getElementById('loading').style.display = 'none';
-            }
-            else{
-                error.innerHTML = `<h1 class="errorMessage">No results...</h1>`;
             }
         }
     }

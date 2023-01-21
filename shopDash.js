@@ -1,3 +1,4 @@
+//API url
 const BASEURL = 'https://sore-narrow-seashore.glitch.me/'
 
 const name = document.getElementById('shopN');
@@ -6,7 +7,9 @@ const save = document.getElementById('save');
 
 let category;
 
+//on load display info of shop on webpage 
 window.addEventListener("load", function(){
+    document.getElementById('dashboard').reset()
     const ShopID = localStorage.getItem('ShopID')
     try{
         fetch(BASEURL+'shopdash/get/'+ShopID)
@@ -14,12 +17,18 @@ window.addEventListener("load", function(){
         .then((data) => {
             name.innerText = data.ShopName
             category = data.Category
+            if(data.Discounts == "true"){
+                document.getElementById('discounts').checked = true;
+            }else if(data.Discounts == "false"){
+                document.getElementById('discounts').checked = false;
+            }
         })
     }catch(err){
         console.log(err);
     }
 });
 
+//function to add porduct categories to be saved
 tag.addEventListener('click', (e)=>{
     e.preventDefault()
     const vals = document.getElementById('productCats').value
@@ -42,6 +51,7 @@ const toBase64 = file => new Promise((reslove, reject)=>{
     reader.onerror = err => reject(err);
 })
 
+//main save function that saved data to the database
 save.addEventListener('click', async (e)=>{
     e.preventDefault()
     const fileInput = document.getElementById('image').files[0]

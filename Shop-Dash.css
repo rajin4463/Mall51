@@ -1,33 +1,34 @@
-/* Global styles */
+/*Global styles*/
 body {
     font-family: Arial, sans-serif;
     background-color: #D6E4E5;
+    /*Remove default padding and margin*/
     padding: 0;
     margin: 0;
   }
   
   
-  /* Logo styles */
+  /*Logo styles*/
   .logo h5 {
     color: #497174;
     font-size: 36px;
     margin-top: 50px;
     text-align: right; 
-    padding-right: 180px;
+    padding-right: 180px; /*Add a right padding to separate the logo from other elements*/
   }
   
   
-  /* Form styles */
+  /*Form styles*/
   form {
     background-color: #ffff;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px 0px #ccc;
-    margin: 50px auto;
+    margin: 50px auto; /*Center the form on the page*/
     max-width: 600px;
   }
   
-  /* Input styles */
+  /*Input styles*/
   .input-class {
     position: relative;
     margin-bottom: 20px;
@@ -38,40 +39,40 @@ body {
   }
   
   
-  /* Placeholder styles */
+  /*Placeholder styles*/
   .place-holder {
     font-weight: bold; 
     color:black;
     font-size: 18px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; /*Add a transition effect when the input is focused*/
     padding: 10px;
   }
   
   
-  /* Input styles */
+  /*Input styles*/
   .form-control {
     width: 100%;
     padding: 10px;
     border: 2px solid #D6E4E5; 
     border-radius: 5px;
     font-size: 18px;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; /*Add a transition effect when the input is focused*/
     background-color: #D6E4E5;
   }
-  
+  /*Change the border color when the input is focused*/
   .form-control:focus {
     outline: none;
     border: 2px solid #497174;
   }
   
-  /* Textarea styles */
+  /*Textarea styles*/
   textarea {
     width: 100%;
     padding: 10px;
     border: 2px solid #D6E4E5;
     border-radius: 5px;
     font-size: 18px;
-    resize: none;
+    resize: none; /*Disable textarea resizing*/
     transition: all 0.3s ease-in-out;
     background-color: #D6E4E5;
   }
@@ -80,16 +81,16 @@ body {
     outline: none;
     border: 2px solid #497174;
   }
-  
+  /*Change background color when button is hovered over*/
   button:hover {
     background-color: #5e8e92;
   }
   
-  /* Button styles */
+  /*Button styles*/
   .buttons {
     display: flex;
-    justify-content: flex-end; 
-    margin-top: 30px;
+    justify-content: flex-end; /*Use flex layout to align the buttons to the right*/
+    margin-top: 30px; /*Add top margin to separate the buttons from other elements*/
   }
   
   button {
@@ -100,10 +101,11 @@ body {
     background-color: #497174;
     color: #fff;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    margin: 0 10px;
+    transition: all 0.3s ease-in-out; /*Add a transition effect when the button is hovered over*/
+    margin: 0 10px; /*Add margin to separate the buttons*/
   }
 
+  /*hide the tags element*/
   #tags{
     display: none;
   }

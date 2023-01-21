@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Mall 51 | Home page</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Hamburger Menu -->
+            <div id="hamburgerNav" class="hamNav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="./Categories/fashion.html" class="fashion">Fashion</a>
+                <a href="./Categories/grocery.html">Grocery</a>
+                <a href="./Categories/food.html">Food</a>
+                <a href="./Categories/discount.html">Discount</a>
+                <a href="logIn.html" style="margin-top: 50%;">Login</a>
+            </div>
+            <!-- Toggle Icon -->
+            <div id="menuToggle">
+                <input type="checkbox" class="toggle" onclick="openNav()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div id="logo"><h1><a href="home.html">Mall 51</a></h1></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search here" id="search">
+            </div>
+        </nav>
+    </header>
+    <!-- Loading animation -->
+<div id="loading">
+    <div class="loading-spinner"></div>
+</div>
+    <!-- Cards display -->
+    <section id="card-display">
+        <ul id="display" class="cards">
+            <!-- 
+            <li class="item">
+                <div class="card">
+                    <div class="image"><img src="./img/little_hearts.jpg" alt=""></div>
+                </div>
+                <div class="content">
+                    <h2>Name-1</h2>
+                    <p>Location</p>
+                </div>
+            </li>
+        -->
+        </ul>
+    </section>
+
+    <footer>
+        <p>Copyright &copy; 2022</p>
+    </footer>
+
+    <script src="./main/home.js">
+    </script>
+    
+</body>
+</html>

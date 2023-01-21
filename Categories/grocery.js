@@ -1,7 +1,6 @@
 console.log("Working...");
 BASE_URL = "https://sore-narrow-seashore.glitch.me/";
 let cards = document.querySelector('.cards');
-let error = document.querySelector('.error');
 let searchBar = document.getElementById('search');
 document.getElementById('loading').style.display = 'flex';
 
@@ -13,7 +12,7 @@ function openNav() {
 function closeNav() {
     document.getElementById("hamburgerNav").style.width = "0";
 }
-
+// Function to display all shop details under the grocery category
 async function displayGroceryCategory(url){
     const response = await fetch(url);
     let grocery = await response.json();
@@ -50,16 +49,13 @@ async function displayGroceryCategory(url){
                 li.appendChild(divCard);
                 fragment.appendChild(li);
             }
-            // else{
-            //     error.innerHTML = `<h1 class="errorMessage">No results...</h1>`;
-            // }
         }
         cards.appendChild(fragment);
         document.getElementById('loading').style.display = 'none';
     }
 }
 displayGroceryCategory(BASE_URL + "home");
-
+// Eventlistner for the search bar when "Enter" key is hit
 searchBar.addEventListener("keyup", function (event) {
     if (event.keyCode === 13){
         let userInput = searchBar.value;
@@ -67,7 +63,7 @@ searchBar.addEventListener("keyup", function (event) {
         
     }
 })
-
+// Function for the search bar to search by shop name or category
 async function searchFunction(urlShop, urlCategory){
     document.getElementById('loading').style.display = 'flex';
     cards.innerHTML = "";
@@ -144,9 +140,6 @@ async function searchFunction(urlShop, urlCategory){
                 }
                 cards.appendChild(fragment);
                 document.getElementById('loading').style.display = 'none';
-            }
-            else{
-                error.innerHTML = `<h1 class="errorMessage">No results...</h1>`;
             }
         }
     }

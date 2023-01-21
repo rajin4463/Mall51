@@ -1,37 +1,41 @@
 /*flex for dual login forms*/
 .wrapper {
-  text-align: center;
+  text-align: center; /*center align the wrapper div*/
 }
-
 .inner-warpper {
   width: 48%;
   display: inline-block;
-  margin: 0 auto; 
+  margin: 0 auto; /*center align the inner wrapper divs*/
 }
-
+/*add space between the forms*/
 .inner-warpper:first-child{
-  margin-right: 50px;
+  margin-right: 50px; /*add a margin-right of 50px to the first inner wrapper div*/
 }
 
+/*Global styles*/
 body {
   background: #f2f2f2;
 }
 :root {
-  --main-bg-color:#497174;
+  --main-bg-color:#497174; /*define a variable for the main background color*/
 }
 .animate {
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear; /*add a transition effect for webkit browsers*/
+  transition: all 0.3s linear; /*add a transition effect for other browsers*/
 }
+/*center align text*/
 .text-center {
   text-align: center;
 }
+/*float elements left*/
 .pull-left {
   float: left;
 }
+/*float elements right*/
 .pull-right {
   float: right;
 }
+/*clearfix*/
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -44,7 +48,7 @@ body {
 .clearfix {
   display: inline-block;
 }
-/* start commented backslash hack \*/
+/*start commented backslash hack \*/
 * html .clearfix {
   height: 1%;
 }
@@ -52,30 +56,37 @@ body {
   display: block;
 }
 
-/* close commented backslash hack */
+/*Set color of all links to the value of --main-bg-color*/
 a {
   color: var(--main-bg-color);
 }
+/*Change color of links on hover or focus and add a linear transition effect*/
 a:hover,
 a:focus {
   color: var(--main-bg-color);
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
+/*Set color of text with class "text-primary" to --main-bg-color*/
 .text-primary {
   color: var(--main-bg-color);
 }
+/*Remove the yellow background when autofilling fields in webkit browsers*/
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px white inset !important;
 }
+/*Set color of h1 element within a class "logo" to --main-bg-color and adjust margin*/
 .logo h1 {
   color: var(--main-bg-color);
   margin-bottom: -12px;
 }
+/*Set width of input checkboxes to "auto"*/
 input[type="checkbox"] {
   width: auto;
 }
+/*Define the styles for button*/
 button {
+  /*Change cursor to pointer when hovering over button*/
   cursor: pointer;
   background: var(--main-bg-color);
   width: 100%;
@@ -83,10 +94,11 @@ button {
   padding: 10px 15px;
   color: #fff;
   font-size: 20px;
+  /*Add transition of 0.3s for linear changes*/
   -webkit-transition: 0.3s linear;
   transition: 0.3s linear;
 }
-
+/*Define the styles for span element with class "validate-tooltip"*/
 span.validate-tooltip {
   background: #D91717;
   width: 100%;
@@ -95,18 +107,20 @@ span.validate-tooltip {
   color: #fff;
   box-sizing: border-box;
   font-size: 14px;
+   /*Move element up by setting margin-top to -28px*/
   margin-top: -28px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+    /*Add animation "tooltipanimation" that lasts for 0.3s and happens once*/
   -webkit-animation: tooltipanimation 0.3s 1;
   animation: tooltipanimation 0.3s 1;
 }
-
+/*styles for "input-group" class*/
 .input-group {
   position: relative;
   margin-bottom: 20px;
 }
-
+/*styling for label within "input-group" class*/
 .input-group label {
   position: absolute;
   top: 9px;
@@ -114,12 +128,12 @@ span.validate-tooltip {
   font-size: 16px;
   color: #cdcdcd;
   font-weight: normal;
-  padding: 2px 5px;
+  padding: 2px 5px; /*2px padding is added to the top and bottom, 5px is added to the left and right of the label*/
   z-index: 5;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear; /*transition property is added for webkit browsers*/
+  transition: all 0.3s linear; /*transition property is added for other browsers*/
 }
-
+/*styling for the input field within the input group*/
 .input-group input {
   outline: none;
   display: block;
@@ -135,7 +149,8 @@ span.validate-tooltip {
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
 }
-
+/*styling for element with the class "lighting"*/
+/*This styles the lighting element, which is a 2px tall bar with a background color specified by the --main-bg-color variable. It is initially hidden (width: 0) and appears when the input group receives focus*/
 .input-group .lighting {
   background: var(--main-bg-color);
   width: 0;
@@ -144,13 +159,14 @@ span.validate-tooltip {
   position: absolute;
   top: 40px;
   left: 0;
-  -webkit-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear; /*smooth transition for the width change*/
   transition: all 0.3s linear;
 }
+/*When the input group receives focus, the lighting element's width changes to 100%*/
 .input-group.focused .lighting {
   width: 100%;
 }
-
+/*This styles the label element when the input group is focused. The background color, font size, and position change*/
 .input-group.focused label {
   background: #fff;
   font-size: 12px;
@@ -158,10 +174,11 @@ span.validate-tooltip {
   left: 5px;
   color: var(--main-bg-color)5;
 }
+/*This class is for a span element with a validate-tooltip*/
 .input-group span.validate-tooltip {
   margin-top: 0;
 }
-
+/*styles a container element with a fixed width, background color, margin, minimum height, and border*/
 .inner-warpper {
   width: 200px;
   background: #fff;
@@ -169,46 +186,55 @@ span.validate-tooltip {
   min-height: 200px;
   border: 1px solid #f3f3f3;
 }
-
+/*styles a container element with padding, and a box-shadow*/
 .wrapper .inner-warpper {
   padding: 50px 30px 60px;
   box-shadow: 1px 1.732px 10px 0px rgba(0, 0, 0, 0.063);
 }
 
-
+/*sets the top margin of a title element to 0*/
 .wrapper .title {
   margin-top: 0;
 }
+/*sets the top margin to 10px, font size to 14px, color to #8E8E8E and cursor to pointer for supporter element*/
 .wrapper .supporter {
   margin-top: 10px;
   font-size: 14px;
   color: #8E8E8E;
   cursor: pointer;
 }
+/*sets the cursor to pointer for remember-me element*/
 .wrapper .remember-me {
   cursor: pointer;
 }
+/*styles the checkbox input by floating it to the left, setting margins and cursor to pointer*/
 .wrapper input[type="checkbox"] {
   float: left;
   margin-right: 5px;
   margin-top: 2px;
   cursor: pointer;
 }
+/*sets the cursor to pointer for the label associated with the rememberMe checkbox*/
 .wrapper label[for="rememberMe"] {
   cursor: pointer;
 }
+/*styles an element with padding, font-size and background color*/
 .wrapper .signup-wrapper {
   padding: 10px;
   font-size: 14px;
   background: #EBEAEA;
 }
+/*styles the links inside the signup-wrapper element by removing the text decoration and setting the color to #7F7F7F*/
 .wrapper .signup-wrapper a {
   text-decoration: none;
   color: #7F7F7F;
 }
+/*styles the links when hovered by adding an underline decoration*/
 .wrapper .signup-wrapper a:hover {
   text-decoration: underline;
 }
+/*This @-webkit-keyframes creates a webkit specific animation for elements
+  The animation changes the margin-top property of an element from -28px to 0*/
 @-webkit-keyframes tooltipanimation {
   from {
     margin-top: -28px;
@@ -217,6 +243,8 @@ span.validate-tooltip {
     margin-top: 0;
   }
 }
+/*This keyframes creates a cross-browser animation for elements
+  The animation changes the margin-top property of an element from -28px to 0*/
 @keyframes tooltipanimation {
   from {
     margin-top: -28px;
@@ -225,6 +253,8 @@ span.validate-tooltip {
     margin-top: 0;
   }
 }
+/*This class styles an element with a fixed width and position, top and left properties, font-size, line-height, 
+  text-align, background color, padding and text color*/
 .direction {
   width: 200px;
   position: fixed;
@@ -237,6 +267,7 @@ span.validate-tooltip {
   padding: 10px;
   color: #fff;
 }
+/*This media query changes the position property of the .direction class to 'static' when the screen size is 480px or less*/
 @media (max-width: 480px) {
   .direction {
     position: static;

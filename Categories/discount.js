@@ -1,7 +1,6 @@
 console.log("Working...");
 BASE_URL = "https://sore-narrow-seashore.glitch.me/";
 let cards = document.querySelector('.cards');
-let error = document.querySelector('.error');
 let searchBar = document.getElementById('search');
 document.getElementById('loading').style.display = 'flex';
 
@@ -13,7 +12,7 @@ function openNav() {
 function closeNav() {
     document.getElementById("hamburgerNav").style.width = "0";
 }
-
+// Function to display all shop details under the discount category
 async function displayDiscountCategory(url){
     const response = await fetch(url);
     let discount = await response.json();
@@ -56,13 +55,9 @@ async function displayDiscountCategory(url){
         cards.appendChild(fragment);
         document.getElementById('loading').style.display = 'none';
     }
-    else{
-        error.innerHTML = "No results found";
-    }
-    
 }
 displayDiscountCategory(BASE_URL + "home");
-
+// Eventlistner for the search bar when "Enter" key is hit
 searchBar.addEventListener("keyup", function (event) {
     if (event.keyCode === 13){
         let userInput = searchBar.value;
@@ -70,7 +65,7 @@ searchBar.addEventListener("keyup", function (event) {
         
     }
 })
-
+// Function for the search bar to search by shop name or category
 async function searchFunction(urlShop, urlCategory){
     document.getElementById('loading').style.display = 'flex';
     cards.innerHTML = "";
@@ -147,9 +142,6 @@ async function searchFunction(urlShop, urlCategory){
                 }
                 cards.appendChild(fragment);
                 document.getElementById('loading').style.display = 'none';
-            }
-            else{
-                error.innerHTML = `<h1 class="errorMessage">No results...</h1>`;
             }
         }
     }

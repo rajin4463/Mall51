@@ -13,7 +13,7 @@ function openNav() {
 function closeNav() {
     document.getElementById("hamburgerNav").style.width = "0";
 }
-
+// Function to display all shop details under the fashion category
 async function displayFashionCategory(url){
     const response = await fetch(url);
     let fashion = await response.json();
@@ -50,16 +50,13 @@ async function displayFashionCategory(url){
                 li.appendChild(divCard);
                 fragment.appendChild(li);
             }
-            // else{
-            //     error.innerHTML = `<h1 class="errorMessage">No results...</h1>`;
-            // }
         }
         cards.appendChild(fragment);
         document.getElementById('loading').style.display = 'none';
     }
 }
 displayFashionCategory(BASE_URL + "home");
-
+// Eventlistner for the search bar when "Enter" key is hit
 searchBar.addEventListener("keyup", function (event) {
     if (event.keyCode === 13){
         let userInput = searchBar.value;
@@ -67,7 +64,7 @@ searchBar.addEventListener("keyup", function (event) {
         
     }
 })
-
+// Function for the search bar to search by shop name or category
 async function searchFunction(urlShop, urlCategory){
     document.getElementById('loading').style.display = 'flex';
     cards.innerHTML = "";
@@ -144,9 +141,6 @@ async function searchFunction(urlShop, urlCategory){
                 }
                 cards.appendChild(fragment);
                 document.getElementById('loading').style.display = 'none';
-            }
-            else{
-                error.innerHTML = `<h1 class="errorMessage">No results...</h1>`;
             }
         }
     }
