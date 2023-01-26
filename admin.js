@@ -9,7 +9,7 @@ function validation() {
     if( document.formy.nshop.value == "" || isNaN( document.formy.nshop.value ) ||
             document.formy.nshop.value.length != 4 ) {
             // length of the id should be 4 characters
-            alert( "Please provide an Id in the format ####." );
+            alert( "Please provide an ID in the format ####." );
             document.myForm.nshop.focus() ;
             return false;
     }

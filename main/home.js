@@ -32,8 +32,14 @@ for (let i = 0; i < ShopDetails.length; i++){
     let divImage = document.createElement("div");
     divImage.classList.add("image");
     let img = document.createElement("img");
-    img.src = imageData.image;
-    img.alt = `${ShopDetails[i].ShopName} Image`;
+    if(!imageData.image==''){
+        img.src = imageData.image;
+        img.alt = `${ShopDetails[i].ShopName} Image`;
+    }else{
+        let responseImg = await fetch(BASE_URL + `home/img/9999`)
+        let imageData = await responseImg.json();
+        img.src = imageData.image;
+    }
     divImage.appendChild(img);
     divCard.appendChild(divImage);
 
@@ -86,8 +92,14 @@ async function searchFunction(urlShop, urlCategory){
                 let divImage = document.createElement("div");
                 divImage.classList.add("image");
                 let img = document.createElement("img");
-                img.src = imageData.image;
-                img.alt = `${data[i].ShopName} Image`;
+                if(!imageData.image==''){
+                    img.src = imageData.image;
+                    img.alt = `${ShopDetails[i].ShopName} Image`;
+                }else{
+                    let responseImg = await fetch(BASE_URL + `home/img/9999`)
+                    let imageData = await responseImg.json();
+                    img.src = imageData.image;
+                }
                 divImage.appendChild(img);
                 divCard.appendChild(divImage);
 
@@ -122,7 +134,9 @@ async function searchFunction(urlShop, urlCategory){
                     let divImage = document.createElement("div");
                     divImage.classList.add("image");
                     let img = document.createElement("img");
-                    img.src = "./img/little_hearts.jpg";
+                    let responseImg = await fetch(BASE_URL + `home/img/9999`)
+                    let imageData = await responseImg.json();
+                    img.src = imageData.image;
                     img.alt = "";
                     divImage.appendChild(img);
                     divCard.appendChild(divImage);
@@ -149,10 +163,3 @@ async function searchFunction(urlShop, urlCategory){
         console.log(error);
     }
 }
-
-
-
-
-
-
-
