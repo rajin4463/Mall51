@@ -15,6 +15,7 @@
 /*Global styles*/
 body {
   background: #f2f2f2;
+  font-family: 'Times New Roman', Times, serif;
 }
 :root {
   --main-bg-color:#497174; /*define a variable for the main background color*/

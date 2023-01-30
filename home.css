@@ -19,6 +19,7 @@
 body {
     margin: 0;
     background: var(--body-color);
+    font-family: 'Times New Roman';
 }
 /** Navigation Bar */
 nav {
@@ -428,11 +429,21 @@ footer{
 
 }
 
+/* 404 not found */
+#notfoundhead{
+    display: none;
+    color: #497174;
+    text-shadow: 13px 12px 2px #D6E4E5;
+    font-family: 'Raleway', sans-serif;
+    font-size: 400px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 
-
-
-
-
-
-
-
+#notfoundtext{
+    display: none;
+    color: #497174;
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    margin-bottom: 13.5%;
+}

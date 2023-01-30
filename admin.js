@@ -32,20 +32,32 @@ function validation() {
         return false;
     }
 
-    let v = document.forms["formy"]["UserName"].value;
-    if (v == ""){
-        alert("Username must be filled out");
+    let username = document.forms["formy"]["UserName"].value;
+    if (username.length <=3){
+        alert("User Name must be 4 or more characters long");
         return false;
     }
 
-    let r = document.forms["formy"]["Password"].value;
-    if (r == ""){
-        alert("Password must be filled out");
+    let password = document.forms["formy"]["Password"].value;
+    if (password.length <=3){
+        alert("Password must be 4 or more characters long");
         return false;
     }
 
     return (true);
 
+}
+
+function delshopVali(){
+    if( document.formy.delete.value == "" || isNaN( document.formy.delete.value ) ||
+        document.formy.delete.value.length != 4 ) {
+        // length of the id should be 4 characters
+        alert( "Please provide an ID in the format ####." );
+        document.myForm.delete.focus() ;
+        return false;
+    }
+
+    return (true)
 }
 
 //////////////////////////////////////////////////////////////////
@@ -106,4 +118,28 @@ form.addEventListener("click", async (event)=>{
     }
 }
 
+})
+
+
+const del = document.getElementById('deleteBTN');
+
+del.addEventListener('click', async (e)=>{
+    e.preventDefault();  // Prevent the default behavior of the form submission.
+    const validation = delshopVali();
+    const id = document.getElementById('delete').value
+
+
+    if(validation==true){
+        try{
+            const response = await fetch(BASE_URL + "admin/deleteShop",{
+                method: "POST",
+                body: JSON.stringify({ShopID:id}),
+                headers: {                                                                 //request body send the user details to stored.
+                    "Content-Type": "application/json",
+                }
+            })
+        }catch(err){
+            console.log(err);
+        }
+    }
 })
